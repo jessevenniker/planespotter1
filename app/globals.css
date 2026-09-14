@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Kleuren uit de skill planespotternederland-design: kaartinkt op kaartpapier
+   en de gele Nederlandse registratieplaat. */
+@theme {
+  --color-ink: #16202a;
+  --color-paper: #e9eae5;
+  --color-paper-2: #dfe1db;
+  --color-plate: #f2c12e;
+  --color-rule: #b5b8b0;
+  --color-approach: #3e6b87;
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.5rem;
+  --text-3xl: 4rem;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+    line-height: 1.1;
+    font-stretch: 85%;
+  }
+
+  a {
+    color: var(--color-approach);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-approach);
+    outline-offset: 2px;
+  }
+}
+
+/* Mono betekent data: alleen voor vastgelegde waarden. */
+.data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* De gele plaat voor registraties. */
+.reg {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  background: var(--color-plate);
+  color: var(--color-ink);
+  padding: 0.05em 0.35em;
+}
+
+/* Het enige bewegende element: de foto-wissel boven de logtabel. */
+.hero-swap {
+  animation: hero-fade 240ms ease-out;
+}
+
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-swap {
+    animation: none;
+  }
+}
