@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import { SITE, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -36,12 +37,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
         <header className="border-b border-ink">
-          <div className="mx-auto flex max-w-[1240px] items-baseline justify-between gap-4 px-5 py-4">
-            <Link
-              href="/"
-              className="text-lg font-semibold text-ink no-underline [font-stretch:85%]"
-            >
-              Dutchplanes
+          <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-4">
+            <Link href="/" className="self-center text-ink no-underline">
+              <Logo className="h-8 w-auto sm:h-9" />
             </Link>
             <nav aria-label="Hoofdmenu">
               <ul className="flex gap-6 text-sm">

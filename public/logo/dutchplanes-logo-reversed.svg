@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 100">
+  <g transform="translate(6,10) scale(1.25)">
+    <polygon points="32,10 35,44 32,55 29,44" fill="#E9EAE5"/>
+    <polygon points="29,28 6,42 31,36" fill="#E9EAE5"/>
+    <polygon points="35,28 58,42 33,36" fill="#E9EAE5"/>
+    <polygon points="30,46 20,54 31,50" fill="#E9EAE5"/>
+    <polygon points="34,46 44,54 33,50" fill="#E9EAE5"/>
+  </g>
+  <g transform="translate(112,63) scale(0.82,1)">
+    <text x="0" y="0" font-family="Archivo, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="46" letter-spacing="0.5" fill="#E9EAE5">DUTCHPLANES</text>
+  </g>
+</svg>
