@@ -57,6 +57,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                   ["/maatschappij", "Maatschappijen"],
                   ["/statistieken", "Cijfers"],
                   ["/bijzonder", "Bijzonder"],
+                  ["/spotdle", "Spotdle"],
+                  ["/mijn-spotlog", "Mijn spotlog"],
                   ["/over", "Over"],
                 ].map(([href, label]) => (
                   <li key={href}>

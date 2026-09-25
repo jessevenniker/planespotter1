@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import EntryControls from "@/components/EntryControls";
 import PhotoGrid from "@/components/PhotoGrid";
+import SeenToggle from "@/components/SeenToggle";
+import ShareButtons from "@/components/ShareButtons";
 import {
   CATEGORIES,
   DOWNLOAD_PRICE_EUR,
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ reg: stri
       title: meta.title,
       description: meta.description,
       type: "article",
-      images: [{ url: e.image.src, width: e.image.width, height: e.image.height, alt: altText(e) }],
+      // De afbeelding komt uit opengraph-image.tsx in deze map.
     },
   };
 }
@@ -171,6 +173,8 @@ export default async function EntryPage({ params }: { params: Promise<{ reg: str
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <EntryControls id={e.id} newerId={nb.newer?.id ?? null} olderId={nb.older?.id ?? null} />
+            <SeenToggle id={e.id} />
+            <ShareButtons id={e.id} title={`${e.registration ?? e.type}${e.operator ? `, ${e.operator}` : ""} op Dutchplanes`} />
           </div>
 
           {e.forSale && sizes.length > 0 && (

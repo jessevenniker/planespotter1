@@ -74,6 +74,23 @@ export default function Home() {
         </dl>
       </section>
 
+      <section className="bg-plate">
+        <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-3">
+          <p>
+            <span className="font-semibold">Spotdle</span>
+            <span className="ml-2 text-ink/80">Elke dag één toestel, ver ingezoomd. Raad jij het type?</span>
+          </p>
+          <div className="flex gap-4 text-sm">
+            <Link href="/spotdle" className="bg-ink px-3 py-1.5 text-paper no-underline hover:bg-approach">
+              Speel vandaag
+            </Link>
+            <Link href="/mijn-spotlog" className="px-1 py-1.5 text-ink">
+              Mijn spotlog
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <LogExplorer entries={entries} />
 
       <section className="mx-auto grid max-w-[1240px] gap-10 border-t border-rule px-5 py-10 md:grid-cols-3">

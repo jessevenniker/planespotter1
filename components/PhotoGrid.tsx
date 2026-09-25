@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SeenMark } from "@/components/SeenToggle";
 import {
   CATEGORIES,
   Entry,
@@ -37,6 +38,7 @@ export default function PhotoGrid({
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                   className="object-cover"
                 />
+                <SeenMark id={e.id} className="absolute bottom-2 right-2" />
                 {reason && (
                   <span className="absolute left-2 top-2 bg-plate px-1.5 py-0.5 text-xs">
                     ★ {showReason ? reason : ""}

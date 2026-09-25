@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/maatschappij", 0.8),
     page("/statistieken", 0.6),
     page("/bijzonder", 0.7),
+    page("/spotdle", 0.7),
+    page("/mijn-spotlog", 0.4, "monthly"),
     page("/over", 0.4, "yearly"),
     {
       url: `${SITE.url}/privacy-en-auteursrecht`,

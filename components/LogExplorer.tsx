@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Viewfinder from "@/components/Viewfinder";
+import { useSpotlog } from "@/lib/storage";
 import {
   CATEGORIES,
   Category,
@@ -79,6 +80,7 @@ export default function LogExplorer({ entries }: { entries: Entry[] }) {
   const [activeId, setActiveId] = useState(entries[0]?.id);
   const [viewer, setViewer] = useState<number | null>(null);
   const search = useRef<HTMLInputElement>(null);
+  const spotlog = useSpotlog();
   const ready = useRef(false);
 
   // URL -> filters: na het laden en bij terug/vooruit in de browser. De server
@@ -386,14 +388,17 @@ export default function LogExplorer({ entries }: { entries: Entry[] }) {
                 <th scope="col" aria-sort={ariaSort("type")} className="py-2 pr-4">{sortButton("type")}</th>
                 <th scope="col" aria-sort={ariaSort("maatschappij")} className="hidden py-2 pr-4 md:table-cell">{sortButton("maatschappij")}</th>
                 <th scope="col" className="hidden py-2 pr-4 font-semibold lg:table-cell">Soort</th>
-                <th scope="col" aria-sort={ariaSort("brandpunt")} className="hidden py-2 lg:table-cell">{sortButton("brandpunt")}</th>
+                <th scope="col" aria-sort={ariaSort("brandpunt")} className="hidden py-2 pr-4 lg:table-cell">{sortButton("brandpunt")}</th>
+                <th scope="col" className="py-2 text-right font-semibold">
+                  <Link href="/mijn-spotlog" className="text-ink no-underline hover:underline">Gezien</Link>
+                </th>
               </tr>
             </thead>
             {groups.map((g, gi) => (
               <tbody key={g.key ?? `g${gi}`}>
                 {f.sort === "datum" && (
                   <tr>
-                    <th colSpan={7} scope="rowgroup" className="pb-2 pt-6 text-left font-normal">
+                    <th colSpan={8} scope="rowgroup" className="pb-2 pt-6 text-left font-normal">
                       {g.key ? (
                         <Link href={`/dag/${g.key}`} className="text-ink no-underline hover:underline">
                           <span className="font-semibold">{capitalize(formatDayLong(g.key))}</span>
@@ -448,8 +453,19 @@ export default function LogExplorer({ entries }: { entries: Entry[] }) {
                       )}
                     </td>
                     <td className="hidden py-2.5 pr-4 align-baseline text-ink/70 lg:table-cell">{CATEGORIES[e.category]}</td>
-                    <td className="data hidden py-2.5 text-right align-baseline text-ink/70 lg:table-cell">
+                    <td className="data hidden py-2.5 pr-4 text-right align-baseline text-ink/70 lg:table-cell">
                       {e.camera ? `${e.camera.focalMm} mm` : ""}
+                    </td>
+                    <td className="py-1.5 text-right align-baseline">
+                      <button
+                        type="button"
+                        aria-pressed={spotlog.has(e.id)}
+                        aria-label={`${e.registration ?? e.type} gezien`}
+                        onClick={() => spotlog.toggle(e.id)}
+                        className={`h-6 w-6 border text-xs ${spotlog.has(e.id) ? "border-approach bg-approach text-paper" : "border-rule text-transparent hover:border-ink hover:text-ink/40"}`}
+                      >
+                        ✓
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -493,6 +509,14 @@ export default function LogExplorer({ entries }: { entries: Entry[] }) {
                       {specialReason(e) && (
                         <span className="absolute left-1.5 top-1.5 bg-plate px-1.5 text-[0.7rem] text-ink">★</span>
                       )}
+                    </button>
+                    <button
+                      type="button"
+                      aria-pressed={spotlog.has(e.id)}
+                      onClick={() => spotlog.toggle(e.id)}
+                      className={`mt-1.5 w-full border py-1 text-xs ${spotlog.has(e.id) ? "border-approach bg-approach text-paper" : "border-rule text-ink/60 hover:border-ink"}`}
+                    >
+                      {spotlog.has(e.id) ? "✓ Gezien" : "Ook gezien?"}
                     </button>
                     <Link href={`/log/${e.id}`} className="mt-2 block text-sm text-ink no-underline">
                       {e.registration ? <span className="reg text-xs">{e.registration}</span> : <span className="font-semibold">{e.typeShort}</span>}
