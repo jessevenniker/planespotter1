@@ -141,7 +141,7 @@ export default async function EntryPage({
             <Row label="Tijd" value={formatTime(e.spottedAt)} mono />
           </dl>
 
-          <p className="mt-5 max-w-[46ch] text-sm">{e.note}</p>
+          {e.note && <p className="mt-5 max-w-[46ch] text-sm">{e.note}</p>}
 
           {e.forSale && sizes.length > 0 && (
             <>

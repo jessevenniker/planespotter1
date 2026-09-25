@@ -70,7 +70,7 @@ export default function LogTable({ entries }: { entries: Entry[] }) {
             <Row label="Gespot" value={formatSpotted(e.spottedAt)} mono />
           </dl>
 
-          <p className="mt-5 max-w-[46ch] text-sm">{e.note}</p>
+          {e.note && <p className="mt-5 max-w-[46ch] text-sm">{e.note}</p>}
 
           <Link
             href={`/log/${e.id}`}
@@ -117,7 +117,7 @@ export default function LogTable({ entries }: { entries: Entry[] }) {
                 }
               >
                 {cols.datum && (
-                  <td className="data py-2.5 pr-4 align-baseline text-ink/70">
+                  <td className="data whitespace-nowrap py-2.5 pr-4 align-baseline text-ink/70">
                     {formatDate(entry.spottedAt)}
                   </td>
                 )}

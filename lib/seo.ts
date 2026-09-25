@@ -63,7 +63,7 @@ export const entryJsonLd = (e: Entry) => {
     name: e.registration
       ? `${typeEnMaatschappij(e)}, ${e.registration}`
       : typeEnMaatschappij(e),
-    description: e.note,
+    ...(e.note ? { description: e.note } : {}),
     creator: { "@id": personId },
     copyrightHolder: { "@id": personId },
     associatedMedia: {
@@ -167,7 +167,7 @@ export const entryMeta = (e: Entry) => {
   const naam = e.registration
     ? `${e.registration} ${e.type}`
     : typeEnMaatschappij(e);
-  const plek = e.runway ? ` bij de ${RUNWAYS[e.runway].name}` : " op Schiphol";
+  const plek = e.runway ? ` bij de ${RUNWAYS[e.runway].name}` : "";
   const datum = e.spottedAt ? ` op ${e.spottedAt.slice(0, 10)}` : "";
 
   return {

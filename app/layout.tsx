@@ -62,7 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <footer className="border-t border-rule">
           <div className="mx-auto flex max-w-[1240px] flex-wrap justify-between gap-4 px-5 py-6 text-sm text-ink/70">
-            <p>Alle foto&apos;s gespot op Amsterdam Airport Schiphol.</p>
+            <p>Foto&apos;s: {SITE.legalName}</p>
             <a href={SITE.instagram}>Instagram</a>
           </div>
         </footer>
