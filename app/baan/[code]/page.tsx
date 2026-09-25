@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   RUNWAYS,
-  entriesByRunway,
   altText,
   formatDate,
 } from "@/lib/photos";
+import { entriesByRunway } from "@/lib/log";
 import { runwayJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const dynamicParams = false;

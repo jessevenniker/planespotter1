@@ -1,8 +1,8 @@
 import {
   RUNWAYS,
-  sortedEntries,
   formatDate,
 } from "@/lib/photos";
+import { operators, sortedEntries, stats } from "@/lib/log";
 import { SITE } from "@/lib/seo";
 
 export const dynamic = "force-static";
@@ -28,6 +28,15 @@ export function GET() {
 > ${SITE.description}
 
 Fotograaf: ${SITE.legalName} (${SITE.instagram})
+
+## In cijfers
+
+${stats().total} toestellen op ${stats().days} spotdagen, van ${stats().operators} maatschappijen.
+Per dag: ${SITE.url}/dag · Per maatschappij: ${SITE.url}/maatschappij · Statistieken: ${SITE.url}/statistieken
+
+## Maatschappijen
+
+${operators().map((o) => `- [${o.name}](${SITE.url}/maatschappij/${o.slug}): ${o.entries.length}`).join("\n")}
 
 ## Banen
 

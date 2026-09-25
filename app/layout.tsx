@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Logo from "@/components/Logo";
+import { RandomButton } from "@/components/EntryControls";
 import { Archivo, JetBrains_Mono } from "next/font/google";
 import { SITE, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
@@ -42,22 +43,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
         <header className="border-b border-ink">
-          <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-5 py-4">
-            <Link href="/" className="self-center text-ink no-underline">
+          <div className="mx-auto flex max-w-[1240px] flex-wrap items-center justify-between gap-x-6 gap-y-3 px-5 py-4">
+            <Link href="/" className="text-ink no-underline">
               <Logo className="h-8 w-auto sm:h-9" />
             </Link>
-            <nav aria-label="Hoofdmenu">
-              <ul className="flex gap-6 text-sm">
-                <li>
-                  <Link href="/" className="text-ink no-underline">
-                    Log
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/over" className="text-ink no-underline">
-                    Over
-                  </Link>
-                </li>
+            <RandomButton className="bg-plate px-2 py-0.5 text-sm text-ink hover:bg-ink hover:text-paper md:order-last" />
+            {/* Op mobiel één rij die horizontaal scrollt, op desktop naast het logo. */}
+            <nav aria-label="Hoofdmenu" className="-mx-5 w-[calc(100%+2.5rem)] overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:ml-auto md:w-auto md:px-0">
+              <ul className="flex items-center gap-x-5 whitespace-nowrap text-sm">
+                {[
+                  ["/", "Log"],
+                  ["/dag", "Dagen"],
+                  ["/maatschappij", "Maatschappijen"],
+                  ["/statistieken", "Cijfers"],
+                  ["/bijzonder", "Bijzonder"],
+                  ["/over", "Over"],
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <Link href={href} className="text-ink no-underline hover:underline">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>

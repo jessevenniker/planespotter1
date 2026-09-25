@@ -23,15 +23,23 @@ een foutmelding.
 
 | Bestand | Rol |
 |---|---|
-| `lib/photos.ts` | Alle data. Dit is de enige plek die je aanpast bij een nieuwe foto. |
+| `lib/entries.ts` | Alle data: één blok per foto. Dit is de enige plek die je aanpast bij een nieuwe foto. |
+| `lib/photos.ts` | Types en pure hulpfuncties (opmaak, licht, bijzonder). Veilig voor client components. |
+| `lib/log.ts` | Queries op het log: per dag, per maatschappij, buren, statistieken. Alleen server. |
 | `lib/seo.ts` | Structured data en metadata, opgebouwd uit de data. |
-| `components/LogTable.tsx` | De logtabel met de foto-wissel. |
+| `components/LogExplorer.tsx` | Het log op de homepage: zoeken, filters, sorteren, per spotdag, contactvel. |
+| `components/SplitFlapBoard.tsx` | Het vertrekbord met klepletters bovenaan de homepage. |
+| `components/Viewfinder.tsx` | De zoeker: schermvullend bladeren met de belichting in beeld. |
+| `components/Charts.tsx` | Staven en kolommen voor de statistieken, met tabelweergave. |
+| `app/dag`, `app/maatschappij`, `app/statistieken`, `app/bijzonder` | Verzamelpagina's, genereren zichzelf. |
+| `app/log.json/route.ts` | Compacte lijst voor de zoeker en de knop Willekeurig. |
 | `app/sitemap.ts` | Sitemap, genereert zichzelf. |
-| `app/robots.ts` | Crawltoegang, inclusief AI-crawlers. |
+| `app/robots.ts` | Crawltoegang: zoekcrawlers ja, trainingscrawlers nee. |
 | `app/llms.txt/route.ts` | Platte samenvatting voor taalmodellen. |
 
-Een nieuwe foto toevoegen is één blok in `lib/photos.ts`. Sitemap, baanpagina,
-typepagina, structured data en llms.txt updaten allemaal automatisch mee.
+Een nieuwe foto toevoegen is één blok in `lib/entries.ts`. Dagpagina's,
+maatschappijpagina's, statistieken, sitemap, structured data en llms.txt
+updaten allemaal automatisch mee.
 
 ## De SEO-keuzes
 

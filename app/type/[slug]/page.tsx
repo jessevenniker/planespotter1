@@ -2,12 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  allTypeSlugs,
-  entriesByType,
   altText,
   formatDate,
   displayId,
 } from "@/lib/photos";
+import { allTypeSlugs, entriesByType } from "@/lib/log";
 import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const dynamicParams = false;

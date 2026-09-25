@@ -88,3 +88,58 @@
     animation: none;
   }
 }
+
+/* Vertrekbord: elke letter is een klepje dat omslaat als de tekst verandert. */
+.flap {
+  display: inline-block;
+  width: 1ch;
+  text-align: center;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 0.06) 0 49%,
+    rgb(0 0 0 / 0.35) 49% 51%,
+    rgb(255 255 255 / 0.02) 51% 100%
+  );
+  border-radius: 2px;
+  margin-right: 1px;
+}
+
+.flap-turn {
+  animation: flap-turn 90ms ease-in;
+  transform-origin: 50% 50%;
+}
+
+@keyframes flap-turn {
+  from {
+    transform: rotateX(80deg);
+    opacity: 0.4;
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+/* De zoeker: fotowissel en AF-punten. */
+.vf-fade {
+  animation: hero-fade 180ms ease-out;
+}
+
+/* In een laag, zodat de Tailwind-klassen border-l-2 enz. de breedte bepalen. */
+@layer components {
+  .vf-corner {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-color: rgb(233 234 229 / 0.7);
+    border-style: solid;
+    border-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flap-turn,
+  .vf-fade {
+    animation: none;
+  }
+}
