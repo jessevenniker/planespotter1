@@ -9,7 +9,6 @@ import {
   formatTime,
   displayId,
   availableSizes,
-  isComplete,
   RUNWAYS,
   DOWNLOAD_PRICE_EUR,
 } from "@/lib/photos";
@@ -119,36 +118,32 @@ export default async function EntryPage({
         </div>
 
         <div>
-          <h1 className="text-2xl">
-            <span className="reg">{displayId(e)}</span>
-          </h1>
-          <p className="mt-3 text-lg">{e.type}</p>
+          {e.registration ? (
+            <>
+              <h1 className="text-2xl">
+                <span className="reg">{e.registration}</span>
+              </h1>
+              <p className="mt-3 text-lg">{e.type}</p>
+            </>
+          ) : (
+            <h1 className="text-2xl">{e.type}</h1>
+          )}
 
           <dl className="mt-5 border-t border-rule text-sm">
             <Row label="Maatschappij" value={e.operator} />
             <Row
               label="Baan"
-              value={
-                e.runway ? `${e.runway} ${RUNWAYS[e.runway].name}` : "nog invullen"
-              }
-              mono={Boolean(e.runway)}
+              value={e.runway && `${e.runway} ${RUNWAYS[e.runway].name}`}
+              mono
             />
-            <Row label="Locatie" value={e.location ?? "nog invullen"} />
+            <Row label="Locatie" value={e.location} />
             <Row label="Datum" value={formatDate(e.spottedAt)} mono />
             <Row label="Tijd" value={formatTime(e.spottedAt)} mono />
           </dl>
 
           <p className="mt-5 max-w-[46ch] text-sm">{e.note}</p>
 
-          {!isComplete(e) && (
-            <p className="mt-5 border-l-2 border-plate bg-paper-2 py-2 pl-3 text-sm">
-              Deze entry is nog niet compleet. Registratie, baan en datum
-              ontbreken, dus hij staat nog niet te koop en wordt niet
-              geïndexeerd.
-            </p>
-          )}
-
-          {e.forSale && sizes.length > 0 ? (
+          {e.forSale && sizes.length > 0 && (
             <>
               <h2 className="mt-10 text-lg">Print</h2>
               <ul className="mt-3 border-t border-rule text-sm">
@@ -192,16 +187,6 @@ export default async function EntryPage({
                 downloaden na betaling, de link blijft 48 uur geldig.
               </p>
             </>
-          ) : (
-            <p className="mt-10 border-t border-rule pt-4 text-sm text-ink/70">
-              Nog niet te koop. Het bestand op de server is{" "}
-              <span className="data">
-                {e.image.fullWidth} × {e.image.fullHeight} px
-              </span>
-              , en voor de kleinste print is{" "}
-              <span className="data">3543 px</span> aan de lange zijde nodig.
-              Upload het origineel om dit vrij te geven.
-            </p>
           )}
         </div>
       </article>
@@ -231,9 +216,10 @@ function Row({
   mono = false,
 }: {
   label: string;
-  value: string;
+  value: string | null;
   mono?: boolean;
 }) {
+  if (!value) return null;
   return (
     <div className="flex justify-between gap-4 border-b border-rule py-2">
       <dt className="text-ink/60">{label}</dt>

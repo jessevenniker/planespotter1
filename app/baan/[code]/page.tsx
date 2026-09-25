@@ -6,7 +6,6 @@ import {
   entriesByRunway,
   altText,
   formatDate,
-  displayId,
 } from "@/lib/photos";
 import { runwayJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
@@ -103,13 +102,23 @@ export default async function RunwayPage({
                     />
                   </div>
                   <p className="mt-3">
-                    <span className="reg">{displayId(e)}</span>
+                    {e.registration ? (
+                      <span className="reg">{e.registration}</span>
+                    ) : (
+                      <span className="font-semibold">{e.type}</span>
+                    )}
                   </p>
-                  <p className="data mt-2 text-sm">{e.typeShort}</p>
-                  <p className="text-sm text-ink/70">{e.operator}</p>
-                  <p className="data mt-1 text-xs text-ink/60">
-                    {formatDate(e.spottedAt)}
-                  </p>
+                  {e.registration && (
+                    <p className="data mt-2 text-sm">{e.typeShort}</p>
+                  )}
+                  {e.operator && (
+                    <p className="text-sm text-ink/70">{e.operator}</p>
+                  )}
+                  {e.spottedAt && (
+                    <p className="data mt-1 text-xs text-ink/60">
+                      {formatDate(e.spottedAt)}
+                    </p>
+                  )}
                 </Link>
               </li>
             ))}

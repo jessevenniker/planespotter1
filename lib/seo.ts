@@ -5,6 +5,7 @@ import {
   availableSizes,
   altText,
   isComplete,
+  typeEnMaatschappij,
 } from "./photos";
 
 export const SITE = {
@@ -60,8 +61,8 @@ export const entryJsonLd = (e: Entry) => {
     "@type": "Photograph",
     "@id": `${url}#foto`,
     name: e.registration
-      ? `${e.type} ${e.registration} van ${e.operator}`
-      : `${e.type} van ${e.operator}`,
+      ? `${typeEnMaatschappij(e)}, ${e.registration}`
+      : typeEnMaatschappij(e),
     description: e.note,
     creator: { "@id": personId },
     copyrightHolder: { "@id": personId },
@@ -75,7 +76,7 @@ export const entryJsonLd = (e: Entry) => {
     },
     about: [
       { "@type": "Thing", name: e.type },
-      { "@type": "Organization", name: e.operator },
+      ...(e.operator ? [{ "@type": "Organization", name: e.operator }] : []),
     ],
   };
 
@@ -99,7 +100,7 @@ export const entryJsonLd = (e: Entry) => {
       "@type": "Product",
       "@id": `${url}#product`,
       name: `${e.type}${e.registration ? ` ${e.registration}` : ""}, print`,
-      description: `Fine art print van een ${e.type} van ${e.operator}, gefotografeerd op Schiphol.`,
+      description: `Fine art print van een ${typeEnMaatschappij(e)}, gefotografeerd op Schiphol.`,
       image: imageUrl,
       brand: { "@type": "Brand", name: SITE.name },
       offers: [
@@ -165,13 +166,13 @@ export const runwayJsonLd = (code: string, count: number) => {
 export const entryMeta = (e: Entry) => {
   const naam = e.registration
     ? `${e.registration} ${e.type}`
-    : `${e.type} van ${e.operator}`;
+    : typeEnMaatschappij(e);
   const plek = e.runway ? ` bij de ${RUNWAYS[e.runway].name}` : " op Schiphol";
   const datum = e.spottedAt ? ` op ${e.spottedAt.slice(0, 10)}` : "";
 
   return {
     title: `${naam}${plek}`,
-    description: `${e.type} van ${e.operator}${e.registration ? ` met registratie ${e.registration}` : ""}, gefotografeerd${plek}${datum}.${
+    description: `${typeEnMaatschappij(e)}${e.registration ? ` met registratie ${e.registration}` : ""}, gefotografeerd${plek}${datum}.${
       e.forSale ? " Beschikbaar als print en als digitale download." : ""
     }`,
     // Onvolledige entries worden niet geïndexeerd: een pagina met "onbekend"

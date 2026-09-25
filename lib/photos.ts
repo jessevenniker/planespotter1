@@ -13,7 +13,8 @@ export type Entry = {
   type: string;
   typeShort: string;
   typeSlug: string;
-  operator: string;
+  /** Maatschappij. null zolang onbekend. */
+  operator: string | null;
   /** Baanaanduiding zoals op Schiphol: 18R, 18C, 06, 09. null zolang onbekend. */
   runway: string | null;
   /** ISO 8601, lokale tijd Schiphol. null zolang onbekend. */
@@ -153,10 +154,10 @@ export const entries: Entry[] = [
   {
     id: "widebody-onbekend-landing",
     registration: null, // TODO
-    type: "Widebody, type nog te bevestigen", // TODO
-    typeShort: "onbekend",
-    typeSlug: "nog-te-bepalen",
-    operator: "Nog te bevestigen", // TODO
+    type: "Widebody", // TODO, exact type nog bevestigen
+    typeShort: "Widebody",
+    typeSlug: "widebody",
+    operator: null, // TODO
     runway: null, // TODO
     spottedAt: null, // TODO
     location: null, // TODO
@@ -205,7 +206,7 @@ export const displayId = (e: Entry) => e.registration ?? e.typeShort;
 
 /** Alt-tekst wordt opgebouwd uit de data, nooit handmatig geschreven. */
 export const altText = (e: Entry) => {
-  const parts = [`${e.type} van ${e.operator}`];
+  const parts = [typeEnMaatschappij(e)];
   if (e.registration) parts.push(`registratie ${e.registration}`);
   parts.push(
     e.runway
@@ -225,8 +226,15 @@ export const availableSizes = (e: Entry) =>
     (s) => Math.max(e.image.fullWidth, e.image.fullHeight) >= s.minPx
   );
 
-export const formatDate = (iso: string | null) =>
-  iso?.slice(0, 10) ?? "onbekend";
+/** "Boeing 737-800 van Ryanair", of alleen het type zolang de maatschappij onbekend is. */
+export const typeEnMaatschappij = (e: Entry) =>
+  e.operator ? `${e.type} van ${e.operator}` : e.type;
 
-export const formatTime = (iso: string | null) =>
-  iso?.slice(11, 16) ?? "onbekend";
+// Onbekende waarden worden niet getoond: de pagina laat alleen zien wat vastligt.
+export const formatDate = (iso: string | null) => iso?.slice(0, 10) ?? null;
+
+export const formatTime = (iso: string | null) => iso?.slice(11, 16) ?? null;
+
+/** Datum en tijd samen, of null als er niets bekend is. */
+export const formatSpotted = (iso: string | null) =>
+  iso ? `${iso.slice(0, 10)} ${iso.slice(11, 16)}` : null;

@@ -1,9 +1,7 @@
 import {
   RUNWAYS,
   sortedEntries,
-  displayId,
   formatDate,
-  isComplete,
 } from "@/lib/photos";
 import { SITE } from "@/lib/seo";
 
@@ -12,9 +10,12 @@ export const dynamic = "force-static";
 // Platte samenvatting voor taalmodellen, opgebouwd uit dezelfde data als de site.
 export function GET() {
   const regels = sortedEntries().map((e) => {
-    const baan = e.runway ? `baan ${e.runway}` : "baan onbekend";
-    const status = isComplete(e) ? "" : " (nog niet compleet)";
-    return `- [${displayId(e)} ${e.type}, ${e.operator}](${SITE.url}/log/${e.id}): ${baan}, ${formatDate(e.spottedAt)}${status}`;
+    // Alleen wat vastligt: onbekende velden worden weggelaten.
+    const naam = [e.registration, e.type, e.operator].filter(Boolean).join(", ");
+    const details = [e.runway && `baan ${e.runway}`, formatDate(e.spottedAt)]
+      .filter(Boolean)
+      .join(", ");
+    return `- [${naam}](${SITE.url}/log/${e.id})${details ? `: ${details}` : ""}`;
   });
 
   const banen = Object.entries(RUNWAYS).map(

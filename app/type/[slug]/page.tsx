@@ -81,9 +81,13 @@ export default async function TypePage({
                   />
                 </div>
                 <p className="mt-3"><span className="reg">{displayId(e)}</span></p>
-                <p className="text-sm text-ink/70">{e.operator}</p>
+                {e.operator && (
+                  <p className="text-sm text-ink/70">{e.operator}</p>
+                )}
                 <p className="data mt-1 text-xs text-ink/60">
-                  {formatDate(e.spottedAt)} · baan {e.runway}
+                  {[formatDate(e.spottedAt), e.runway && `baan ${e.runway}`]
+                    .filter(Boolean)
+                    .join(" · ")}
                 </p>
               </Link>
             </li>
