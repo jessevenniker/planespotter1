@@ -39,8 +39,11 @@ ${regels.join("\n")}
 
 ## Gebruik
 
-De foto's zijn auteursrechtelijk beschermd. Citeren en verwijzen mag, met een
-link naar de entrypagina. Overnemen of hergebruiken van de foto's zelf niet.
+De foto's zijn auteursrechtelijk beschermd. Verwijzen mag, met bronvermelding en
+een link naar de entrypagina. Overnemen of hergebruiken van de foto's zelf niet.
+Tekst- en datamining is voorbehouden (art. 15o Auteurswet): de foto's, teksten en
+gegevens mogen niet worden gebruikt voor het trainen van AI-modellen.
+Zie ${SITE.url}/privacy-en-auteursrecht
 `;
 
   return new Response(body, {

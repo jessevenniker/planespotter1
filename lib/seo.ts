@@ -11,11 +11,14 @@ import {
 export const SITE = {
   name: "Dutchplanes",
   legalName: "planespotternederland",
-  url: "https://dutchplanes.nl",
+  url: "https://www.planespotternederland.nl",
   description:
     "Logboek van vliegtuigen gespot op Schiphol, met registratie, type en baan per foto. Prints en digitale downloads.",
   locale: "nl_NL",
   instagram: "https://www.instagram.com/planespotternederland/",
+  /** De rechtspersoon achter de site: verantwoordelijke onder de AVG. */
+  operator: "Jesco Innovation B.V.",
+  email: "info@jescoinnovation.com",
 };
 
 /**

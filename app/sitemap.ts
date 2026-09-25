@@ -23,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.4,
     },
+    {
+      url: `${SITE.url}/privacy-en-auteursrecht`,
+      lastModified: "2026-09-25",
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
     // Entrypagina's. De datum van de foto is de lastModified, want de inhoud
     // van zo'n pagina verandert daarna niet meer.
     ...entries.map((e) => ({

@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   title: { default: SITE.name, template: `%s · ${SITE.name}` },
   description: SITE.description,
   openGraph: { siteName: SITE.name, locale: SITE.locale },
+  // Machineleesbaar voorbehoud tegen tekst- en datamining (art. 15o Aw).
+  other: {
+    "tdm-reservation": "1",
+    "tdm-policy": `${SITE.url}/privacy-en-auteursrecht#tekst-en-datamining`,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -62,8 +67,20 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         <footer className="border-t border-rule">
           <div className="mx-auto flex max-w-[1240px] flex-wrap justify-between gap-4 px-5 py-6 text-sm text-ink/70">
-            <p>Alle foto&apos;s gemaakt op Amsterdam Airport Schiphol.</p>
-            <a href={SITE.instagram}>Instagram</a>
+            <p>
+              Alle foto&apos;s gemaakt op Amsterdam Airport Schiphol. &copy;{" "}
+              {SITE.legalName}
+            </p>
+            <ul className="flex gap-6">
+              <li>
+                <Link href="/privacy-en-auteursrecht">
+                  Privacy en auteursrecht
+                </Link>
+              </li>
+              <li>
+                <a href={SITE.instagram}>Instagram</a>
+              </li>
+            </ul>
           </div>
         </footer>
       </body>

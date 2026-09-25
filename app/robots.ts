@@ -1,21 +1,38 @@
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/seo";
 
-// AI-crawlers mogen alles behalve downloads en het manifest. CCBot niet: dat is
-// scrapen zonder verwijzing terug.
-const aiCrawlers = ["GPTBot", "OAI-SearchBot", "ClaudeBot", "PerplexityBot"];
+// Zoekmachines en AI-zoekfuncties mogen de site lezen, zodat Dutchplanes als
+// bron genoemd kan worden. Crawlers die verzamelen voor het trainen van
+// modellen niet: tekst- en datamining is voorbehouden (art. 15o Auteurswet).
+const zoekCrawlers = [
+  "OAI-SearchBot",
+  "ChatGPT-User",
+  "Claude-SearchBot",
+  "Claude-User",
+  "PerplexityBot",
+  "Perplexity-User",
+];
+const trainingsCrawlers = [
+  "GPTBot",
+  "ClaudeBot",
+  "CCBot",
+  "Google-Extended",
+  "Applebot-Extended",
+  "meta-externalagent",
+  "Bytespider",
+];
 const privePaden = ["/download/", "/manifest"];
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       { userAgent: "*", allow: "/", disallow: privePaden },
-      ...aiCrawlers.map((userAgent) => ({
+      ...zoekCrawlers.map((userAgent) => ({
         userAgent,
         allow: "/",
         disallow: privePaden,
       })),
-      { userAgent: "CCBot", disallow: "/" },
+      ...trainingsCrawlers.map((userAgent) => ({ userAgent, disallow: "/" })),
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
   };
