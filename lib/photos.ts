@@ -1,8 +1,8 @@
 // De enige bron van waarheid voor de site. Elke entry is een logboekregel.
 //
 // Alleen vastgelegde gegevens: type en maatschappij zoals zichtbaar op de foto,
-// registratie waar die leesbaar op het toestel staat, en de opnametijd uit de
-// EXIF van de camera. Onbekende velden zijn null en worden niet getoond. Een
+// registratie waar die leesbaar op het toestel staat, de opnametijd uit de EXIF
+// van de camera en Schiphol als locatie (bevestigd door de fotograaf). Onbekende velden zijn null en worden niet getoond. Een
 // entry komt pas in de sitemap als registratie, baan en datum bekend zijn.
 
 export type Entry = {
@@ -76,7 +76,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-22T13:31:26",
-    location: null,
+    location: "Schiphol",
     note: "Jubileumlivery met 100",
     image: {
       src: "/photos/klm-787-2026-09-22.jpg",
@@ -97,7 +97,7 @@ export const entries: Entry[] = [
     operator: "World2fly",
     runway: null,
     spottedAt: "2026-09-22T13:29:32",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/world2fly-a350-2026-09-22.jpg",
@@ -118,7 +118,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T15:18:04",
-    location: null,
+    location: "Schiphol",
     note: "KLM Asia-titels",
     image: {
       src: "/photos/klm-777-200er-2026-09-20.jpg",
@@ -139,7 +139,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T15:16:53",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-2026-09-20.jpg",
@@ -160,7 +160,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2026-09-20T15:15:59",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e195-e2-2026-09-20-3.jpg",
@@ -181,7 +181,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T15:14:10",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-777-300er-2026-09-20.jpg",
@@ -202,7 +202,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T15:14:04",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-777-2026-09-20.jpg",
@@ -223,7 +223,7 @@ export const entries: Entry[] = [
     operator: "Emirates",
     runway: null,
     spottedAt: "2026-09-20T15:08:36",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/a6-edv.jpg",
@@ -244,7 +244,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2026-09-20T15:07:10",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/transavia-a321neo-2026-09-20.jpg",
@@ -265,7 +265,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T15:03:09",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-a330-2026-09-20-2.jpg",
@@ -286,7 +286,7 @@ export const entries: Entry[] = [
     operator: "TUI",
     runway: null,
     spottedAt: "2026-09-20T15:02:01",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/tui-737-max-2026-09-20.jpg",
@@ -307,7 +307,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2026-09-20T14:59:49",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e195-e2-2026-09-20-2.jpg",
@@ -328,7 +328,7 @@ export const entries: Entry[] = [
     operator: "Delta Air Lines",
     runway: null,
     spottedAt: "2026-09-20T14:56:28",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/delta-air-lines-a330-900-2026-09-20.jpg",
@@ -349,7 +349,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T14:54:55",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-787-2026-09-20.jpg",
@@ -370,7 +370,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2026-09-20T14:50:41",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/transavia-737-800-2026-09-20.jpg",
@@ -391,7 +391,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-09-20T14:48:32",
-    location: null,
+    location: "Schiphol",
     note: "Wit, zonder maatschappijbelettering",
     image: {
       src: "/photos/ec-ofu.jpg",
@@ -412,7 +412,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2026-09-20T14:47:39",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e195-e2-2026-09-20.jpg",
@@ -433,7 +433,7 @@ export const entries: Entry[] = [
     operator: "Air France Hop",
     runway: null,
     spottedAt: "2026-09-20T14:46:30",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-france-hop-e190-2026-09-20.jpg",
@@ -454,7 +454,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2026-09-20T14:45:33",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-yhs.jpg",
@@ -475,7 +475,7 @@ export const entries: Entry[] = [
     operator: "Swiss",
     runway: null,
     spottedAt: "2026-09-20T14:43:15",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/swiss-a220-2026-09-20.jpg",
@@ -496,7 +496,7 @@ export const entries: Entry[] = [
     operator: "Iberia",
     runway: null,
     spottedAt: "2026-09-20T14:42:25",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ec-mxy.jpg",
@@ -517,7 +517,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-20T14:39:03",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-a330-2026-09-20.jpg",
@@ -538,7 +538,7 @@ export const entries: Entry[] = [
     operator: "Lufthansa",
     runway: null,
     spottedAt: "2026-09-20T14:38:03",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/lufthansa-a319-2026-09-20.jpg",
@@ -559,7 +559,7 @@ export const entries: Entry[] = [
     operator: "Thai Airways",
     runway: null,
     spottedAt: "2026-09-18T13:42:20",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/thai-airways-a350-2026-09-18.jpg",
@@ -580,7 +580,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-18T13:41:37",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-a330-2026-09-18.jpg",
@@ -601,7 +601,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-18T13:28:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-2026-09-18.jpg",
@@ -622,7 +622,7 @@ export const entries: Entry[] = [
     operator: "Finnair",
     runway: null,
     spottedAt: "2026-09-18T13:24:47",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/finnair-a350-2026-09-18.jpg",
@@ -643,7 +643,7 @@ export const entries: Entry[] = [
     operator: "LATAM",
     runway: null,
     spottedAt: "2026-09-18T13:20:18",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/latam-787-2026-09-18.jpg",
@@ -664,7 +664,7 @@ export const entries: Entry[] = [
     operator: "Garuda Indonesia",
     runway: null,
     spottedAt: "2026-09-16T13:22:17",
-    location: null,
+    location: "Schiphol",
     note: "SkyTeam-livery",
     image: {
       src: "/photos/garuda-indonesia-777-300er-2026-09-16.jpg",
@@ -685,7 +685,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-16T13:20:50",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-2026-09-16.jpg",
@@ -706,7 +706,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-16T13:18:37",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-bhn.jpg",
@@ -727,7 +727,7 @@ export const entries: Entry[] = [
     operator: "Vietnam Airlines",
     runway: null,
     spottedAt: "2026-09-15T13:26:40",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/vietnam-airlines-a350-2026-09-15.jpg",
@@ -748,7 +748,7 @@ export const entries: Entry[] = [
     operator: "Icelandair",
     runway: null,
     spottedAt: "2026-09-15T13:24:13",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/icelandair-737-max-2026-09-15.jpg",
@@ -769,7 +769,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-15T13:21:15",
-    location: null,
+    location: "Schiphol",
     note: "Oranje livery",
     image: {
       src: "/photos/klm-777-300er-2026-09-15.jpg",
@@ -790,7 +790,7 @@ export const entries: Entry[] = [
     operator: "TUI",
     runway: null,
     spottedAt: "2026-09-15T13:20:31",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/tui-787-2026-09-15.jpg",
@@ -811,7 +811,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-15T13:18:39",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-787-2026-09-15.jpg",
@@ -832,7 +832,7 @@ export const entries: Entry[] = [
     operator: "LATAM",
     runway: null,
     spottedAt: "2026-09-14T13:45:52",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/latam-787-2026-09-14.jpg",
@@ -853,7 +853,7 @@ export const entries: Entry[] = [
     operator: "Emirates SkyCargo",
     runway: null,
     spottedAt: "2026-09-14T13:44:54",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/a6-efs.jpg",
@@ -874,7 +874,7 @@ export const entries: Entry[] = [
     operator: "airBaltic",
     runway: null,
     spottedAt: "2026-09-14T13:26:51",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/airbaltic-a220-300-2026-09-14.jpg",
@@ -895,7 +895,7 @@ export const entries: Entry[] = [
     operator: "Icelandair",
     runway: null,
     spottedAt: "2026-09-14T13:23:12",
-    location: null,
+    location: "Schiphol",
     note: "Rotatie met het neuswiel net los van de baan. Op de achtergrond een wachtend KLM-toestel, vervormd door de hittetrilling boven het asfalt.",
     image: {
       src: "/photos/icelandair-boeing-737-max-8.jpg",
@@ -916,7 +916,7 @@ export const entries: Entry[] = [
     operator: "Ryanair",
     runway: null,
     spottedAt: "2026-09-14T13:20:03",
-    location: null,
+    location: "Schiphol",
     note: "Vlak na het loskomen, landingsgestel nog uit. De hittetrilling boven de baan maakt van de toestellen erachter gekleurde vlekken.",
     image: {
       src: "/photos/ryanair-boeing-737-800.jpg",
@@ -937,7 +937,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-14T13:17:58",
-    location: null,
+    location: "Schiphol",
     note: "Klimmend van onderaf gefotografeerd, gestel halverwege het intrekken. Rechts in beeld de rood-witte radiomast.",
     image: {
       src: "/photos/klm-airbus-a330-start.jpg",
@@ -958,7 +958,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-11T13:24:38",
-    location: null,
+    location: "Schiphol",
     note: "Recht van voren op een natte baan, met opspattend water onder het gestel en de skyline van Amstelveen erachter.",
     image: {
       src: "/photos/klm-airbus-a330-landing.jpg",
@@ -979,7 +979,7 @@ export const entries: Entry[] = [
     operator: "Norwegian",
     runway: null,
     spottedAt: "2026-09-11T13:23:03",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/norwegian-737-2026-09-11.jpg",
@@ -1000,7 +1000,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-11T13:20:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-2026-09-11.jpg",
@@ -1021,7 +1021,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-09-11T13:17:04",
-    location: null,
+    location: "Schiphol",
     note: "Landing op een natte baan, met een wolk opspattend water over de volle breedte. Wit toestel met een rood staartmerk.",
     image: {
       src: "/photos/widebody-onbekend-landing.jpg",
@@ -1042,7 +1042,7 @@ export const entries: Entry[] = [
     operator: "World2fly",
     runway: null,
     spottedAt: "2026-09-09T13:51:45",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/world2fly-a350-2026-09-09.jpg",
@@ -1063,7 +1063,7 @@ export const entries: Entry[] = [
     operator: "United Airlines",
     runway: null,
     spottedAt: "2026-09-09T13:50:25",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/united-airlines-767-300er-2026-09-09.jpg",
@@ -1084,7 +1084,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-09-09T13:46:22",
-    location: null,
+    location: "Schiphol",
     note: "KLM Asia-titels",
     image: {
       src: "/photos/klm-777-2026-09-09.jpg",
@@ -1105,7 +1105,7 @@ export const entries: Entry[] = [
     operator: "MNG Airlines",
     runway: null,
     spottedAt: "2026-09-06T17:29:26",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/mng-airlines-a300-2026-09-06.jpg",
@@ -1126,7 +1126,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:27:38",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/se-rnr.jpg",
@@ -1147,7 +1147,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:27:11",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/praetor-legacy-500-2026-08-23.jpg",
@@ -1168,7 +1168,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-08-23T19:24:06",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-800-2026-08-23.jpg",
@@ -1189,7 +1189,7 @@ export const entries: Entry[] = [
     operator: "VistaJet",
     runway: null,
     spottedAt: "2026-08-23T19:21:27",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/vistajet-challenger-2026-08-23-2.jpg",
@@ -1210,7 +1210,7 @@ export const entries: Entry[] = [
     operator: "VistaJet",
     runway: null,
     spottedAt: "2026-08-23T19:17:50",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/vistajet-global-2026-08-23.jpg",
@@ -1231,7 +1231,7 @@ export const entries: Entry[] = [
     operator: "VistaJet",
     runway: null,
     spottedAt: "2026-08-23T19:17:41",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/vistajet-challenger-2026-08-23.jpg",
@@ -1252,7 +1252,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:15:57",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-dwc.jpg",
@@ -1273,7 +1273,7 @@ export const entries: Entry[] = [
     operator: "GlobeAir",
     runway: null,
     spottedAt: "2026-08-23T19:14:41",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/oe-fzb.jpg",
@@ -1294,7 +1294,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:13:29",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/lx-pck.jpg",
@@ -1315,7 +1315,7 @@ export const entries: Entry[] = [
     operator: "GlobeAir",
     runway: null,
     spottedAt: "2026-08-23T19:10:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/oe-fco.jpg",
@@ -1336,7 +1336,7 @@ export const entries: Entry[] = [
     operator: "Emirates",
     runway: null,
     spottedAt: "2026-08-23T19:06:50",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/emirates-777-300er-2026-08-23.jpg",
@@ -1357,7 +1357,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:04:51",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-cgv.jpg",
@@ -1378,7 +1378,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T19:01:11",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/challenger-2026-08-23.jpg",
@@ -1399,7 +1399,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T18:59:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-dwa.jpg",
@@ -1420,7 +1420,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-08-23T18:52:28",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-777-200er-2026-08-23.jpg",
@@ -1441,7 +1441,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-08-23T18:50:00",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-dis.jpg",
@@ -1462,7 +1462,7 @@ export const entries: Entry[] = [
     operator: "Delta Air Lines",
     runway: null,
     spottedAt: "2026-08-21T11:47:06",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/delta-air-lines-widebody-2026-08-21.jpg",
@@ -1483,7 +1483,7 @@ export const entries: Entry[] = [
     operator: "Qatar Airways",
     runway: null,
     spottedAt: "2026-08-21T11:42:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/qatar-airways-787-2026-08-21.jpg",
@@ -1504,7 +1504,7 @@ export const entries: Entry[] = [
     operator: "easyJet",
     runway: null,
     spottedAt: "2026-08-21T11:36:51",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/g-ezoa.jpg",
@@ -1525,7 +1525,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2026-08-21T11:32:03",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/transavia-737-2026-08-21.jpg",
@@ -1546,7 +1546,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-08-21T11:26:40",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-787-2026-08-21.jpg",
@@ -1567,7 +1567,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-08-14T20:45:29",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-737-2026-08-14.jpg",
@@ -1588,7 +1588,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2026-08-14T20:38:40",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e-jet-2026-08-14.jpg",
@@ -1609,7 +1609,7 @@ export const entries: Entry[] = [
     operator: "China Southern Cargo",
     runway: null,
     spottedAt: "2026-08-14T20:38:17",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/china-southern-cargo-777f-2026-08-14.jpg",
@@ -1630,7 +1630,7 @@ export const entries: Entry[] = [
     operator: "SAS",
     runway: null,
     spottedAt: "2026-08-14T20:31:28",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/sas-a320neo-2026-08-14.jpg",
@@ -1651,7 +1651,7 @@ export const entries: Entry[] = [
     operator: "Vietnam Airlines",
     runway: null,
     spottedAt: "2026-08-13T13:22:21",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/vietnam-airlines-a350-2026-08-13.jpg",
@@ -1672,7 +1672,7 @@ export const entries: Entry[] = [
     operator: "China Southern Airlines",
     runway: null,
     spottedAt: "2026-08-13T12:54:52",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/china-southern-airlines-a350-2026-08-13.jpg",
@@ -1693,7 +1693,7 @@ export const entries: Entry[] = [
     operator: "TUI",
     runway: null,
     spottedAt: "2026-08-01T15:35:38",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/tui-737-max-2026-08-01.jpg",
@@ -1714,7 +1714,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2026-08-01T15:31:05",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-exe.jpg",
@@ -1735,7 +1735,7 @@ export const entries: Entry[] = [
     operator: "Air Canada",
     runway: null,
     spottedAt: "2026-07-22T12:27:12",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-canada-787-2026-07-22-2.jpg",
@@ -1756,7 +1756,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-07-22T12:18:59",
-    location: null,
+    location: "Schiphol",
     note: "Jubileumlivery met 100",
     image: {
       src: "/photos/klm-787-2026-07-22.jpg",
@@ -1777,7 +1777,7 @@ export const entries: Entry[] = [
     operator: "Air Canada",
     runway: null,
     spottedAt: "2026-07-22T12:16:28",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-canada-787-2026-07-22.jpg",
@@ -1798,7 +1798,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-07-22T12:11:58",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-bcl.jpg",
@@ -1819,7 +1819,7 @@ export const entries: Entry[] = [
     operator: "Delta Air Lines",
     runway: null,
     spottedAt: "2026-07-22T12:08:39",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/n415dx.jpg",
@@ -1840,7 +1840,7 @@ export const entries: Entry[] = [
     operator: "Cathay Pacific",
     runway: null,
     spottedAt: "2026-07-22T12:07:09",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/cathay-pacific-widebody-2026-07-22.jpg",
@@ -1861,7 +1861,7 @@ export const entries: Entry[] = [
     operator: "TUI",
     runway: null,
     spottedAt: "2026-07-22T11:53:32",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/tui-787-2026-07-22.jpg",
@@ -1882,7 +1882,7 @@ export const entries: Entry[] = [
     operator: "Air Europa",
     runway: null,
     spottedAt: "2026-03-22T19:20:44",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-europa-737-max-2026-03-22.jpg",
@@ -1903,7 +1903,7 @@ export const entries: Entry[] = [
     operator: "Air India",
     runway: null,
     spottedAt: "2026-03-22T19:15:23",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-india-787-2026-03-22.jpg",
@@ -1924,7 +1924,7 @@ export const entries: Entry[] = [
     operator: "KLM Cargo",
     runway: null,
     spottedAt: "2026-03-22T19:00:39",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-ckc.jpg",
@@ -1945,7 +1945,7 @@ export const entries: Entry[] = [
     operator: "KLM Cargo",
     runway: null,
     spottedAt: "2026-03-15T14:14:59",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cargo-747-400erf-2026-03-15.jpg",
@@ -1966,7 +1966,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2026-03-15T14:13:31",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-787-2026-03-15.jpg",
@@ -1987,7 +1987,7 @@ export const entries: Entry[] = [
     operator: "Atlas Air",
     runway: null,
     spottedAt: "2026-03-15T13:47:34",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/atlas-air-747-400f-2026-03-15.jpg",
@@ -2008,7 +2008,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2026-03-15T13:41:31",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-yhe.jpg",
@@ -2029,7 +2029,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-01-27T13:41:25",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/t-060.jpg",
@@ -2050,7 +2050,7 @@ export const entries: Entry[] = [
     operator: null,
     runway: null,
     spottedAt: "2026-01-27T13:38:08",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/f-35-2026-01-27.jpg",
@@ -2071,7 +2071,7 @@ export const entries: Entry[] = [
     operator: "Qatar Airways Cargo",
     runway: null,
     spottedAt: "2026-01-27T13:08:47",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/qatar-airways-cargo-777f-2026-01-27.jpg",
@@ -2092,7 +2092,7 @@ export const entries: Entry[] = [
     operator: "Air France",
     runway: null,
     spottedAt: "2025-11-09T17:08:28",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/f-hpnu.jpg",
@@ -2113,7 +2113,7 @@ export const entries: Entry[] = [
     operator: "Aer Lingus",
     runway: null,
     spottedAt: "2025-11-09T17:07:22",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ei-gal.jpg",
@@ -2134,7 +2134,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2025-08-21T14:52:13",
-    location: null,
+    location: "Schiphol",
     note: "Sunweb-livery",
     image: {
       src: "/photos/transavia-737-800-2025-08-21-2.jpg",
@@ -2155,7 +2155,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2025-08-21T14:47:45",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-787-2025-08-21.jpg",
@@ -2176,7 +2176,7 @@ export const entries: Entry[] = [
     operator: "Icelandair",
     runway: null,
     spottedAt: "2025-08-21T14:44:18",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/icelandair-757-200-2025-08-21.jpg",
@@ -2197,7 +2197,7 @@ export const entries: Entry[] = [
     operator: "Transavia",
     runway: null,
     spottedAt: "2025-08-21T14:42:31",
-    location: null,
+    location: "Schiphol",
     note: "Peter Pan-livery",
     image: {
       src: "/photos/transavia-737-800-2025-08-21.jpg",
@@ -2218,7 +2218,7 @@ export const entries: Entry[] = [
     operator: "easyJet",
     runway: null,
     spottedAt: "2025-07-13T14:41:49",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/easyjet-a320-2025-07-13.jpg",
@@ -2239,7 +2239,7 @@ export const entries: Entry[] = [
     operator: "Qatar Airways",
     runway: null,
     spottedAt: "2025-07-08T22:50:34",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/qatar-airways-777-2025-07-08.jpg",
@@ -2260,7 +2260,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2025-07-08T22:44:34",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e-jet-2025-07-08.jpg",
@@ -2281,7 +2281,7 @@ export const entries: Entry[] = [
     operator: "Aeromexico",
     runway: null,
     spottedAt: "2025-07-08T22:42:00",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/aeromexico-787-2025-07-08.jpg",
@@ -2302,7 +2302,7 @@ export const entries: Entry[] = [
     operator: "Etihad Airways",
     runway: null,
     spottedAt: "2025-07-08T22:34:56",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/etihad-airways-a350-2025-07-08.jpg",
@@ -2323,7 +2323,7 @@ export const entries: Entry[] = [
     operator: "Air China Cargo",
     runway: null,
     spottedAt: "2025-06-30T21:00:09",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/air-china-cargo-777f-2025-06-30.jpg",
@@ -2344,7 +2344,7 @@ export const entries: Entry[] = [
     operator: "China Eastern",
     runway: null,
     spottedAt: "2025-06-30T20:57:14",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/china-eastern-777-300er-2025-06-30.jpg",
@@ -2365,7 +2365,7 @@ export const entries: Entry[] = [
     operator: "Silk Way West Airlines",
     runway: null,
     spottedAt: "2025-06-30T20:43:09",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/silk-way-west-airlines-777f-2025-06-30.jpg",
@@ -2386,7 +2386,7 @@ export const entries: Entry[] = [
     operator: "Helvetic Airways",
     runway: null,
     spottedAt: "2025-06-30T20:35:56",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/hb-azk.jpg",
@@ -2407,7 +2407,7 @@ export const entries: Entry[] = [
     operator: "Saudia",
     runway: null,
     spottedAt: "2025-06-23T20:18:43",
-    location: null,
+    location: "Schiphol",
     note: "75 Years-livery",
     image: {
       src: "/photos/saudia-787-2025-06-23.jpg",
@@ -2428,7 +2428,7 @@ export const entries: Entry[] = [
     operator: "Corendon",
     runway: null,
     spottedAt: "2025-05-11T16:52:55",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/corendon-737-max-2025-05-11.jpg",
@@ -2449,7 +2449,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2025-04-30T16:12:12",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-bxy.jpg",
@@ -2470,7 +2470,7 @@ export const entries: Entry[] = [
     operator: "KLM Cityhopper",
     runway: null,
     spottedAt: "2025-04-25T19:06:56",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-cityhopper-e-jet-2025-04-25.jpg",
@@ -2491,7 +2491,7 @@ export const entries: Entry[] = [
     operator: "AnadoluJet",
     runway: null,
     spottedAt: "2025-04-25T18:35:57",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/anadolujet-737-800-2025-04-25.jpg",
@@ -2512,7 +2512,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2025-02-02T15:08:03",
-    location: null,
+    location: "Schiphol",
     note: "KLM Asia-titels",
     image: {
       src: "/photos/ph-bqf.jpg",
@@ -2533,7 +2533,7 @@ export const entries: Entry[] = [
     operator: "EgyptAir",
     runway: null,
     spottedAt: "2025-02-02T14:46:20",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/egyptair-787-2025-02-02.jpg",
@@ -2554,7 +2554,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2025-02-02T14:45:12",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ph-axb.jpg",
@@ -2575,7 +2575,7 @@ export const entries: Entry[] = [
     operator: "KLM",
     runway: null,
     spottedAt: "2025-02-02T14:45:00",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/klm-a321neo-2025-02-02.jpg",
@@ -2596,7 +2596,7 @@ export const entries: Entry[] = [
     operator: "Qatar Airways Cargo",
     runway: null,
     spottedAt: "2025-02-01T14:00:46",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/qatar-airways-cargo-777f-2025-02-01.jpg",
@@ -2617,7 +2617,7 @@ export const entries: Entry[] = [
     operator: "Airbus",
     runway: null,
     spottedAt: "2024-08-13T17:49:24",
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/airbus-belugaxl-2024-08-13.jpg",
@@ -2638,7 +2638,7 @@ export const entries: Entry[] = [
     operator: "Etihad Cargo",
     runway: null,
     spottedAt: null,
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/a6-dde.jpg",
@@ -2659,7 +2659,7 @@ export const entries: Entry[] = [
     operator: "China Southern Airlines",
     runway: null,
     spottedAt: null,
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/china-southern-airlines-a350.jpg",
@@ -2680,7 +2680,7 @@ export const entries: Entry[] = [
     operator: "SAS",
     runway: null,
     spottedAt: null,
-    location: null,
+    location: "Schiphol",
     note: null,
     image: {
       src: "/photos/ei-scf.jpg",
@@ -2728,9 +2728,10 @@ export const displayId = (e: Entry) => e.registration ?? e.typeShort;
 export const altText = (e: Entry) => {
   const parts = [typeEnMaatschappij(e)];
   if (e.registration) parts.push(`registratie ${e.registration}`);
-  // Een plaats alleen noemen als de baan bekend is.
   if (e.runway) {
     parts.push(`gefotografeerd bij de ${RUNWAYS[e.runway].name} op Schiphol`);
+  } else if (e.location) {
+    parts.push(`gefotografeerd op ${e.location}`);
   }
   return parts.join(", ");
 };

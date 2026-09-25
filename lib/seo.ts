@@ -167,7 +167,11 @@ export const entryMeta = (e: Entry) => {
   const naam = e.registration
     ? `${e.registration} ${e.type}`
     : typeEnMaatschappij(e);
-  const plek = e.runway ? ` bij de ${RUNWAYS[e.runway].name}` : "";
+  const plek = e.runway
+    ? ` bij de ${RUNWAYS[e.runway].name}`
+    : e.location
+      ? ` op ${e.location}`
+      : "";
   const datum = e.spottedAt ? ` op ${e.spottedAt.slice(0, 10)}` : "";
 
   return {
