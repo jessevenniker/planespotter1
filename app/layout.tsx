@@ -53,8 +53,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <ul className="flex items-center gap-x-5 whitespace-nowrap text-sm">
                 {[
                   ["/", "Log"],
+                  ["/aankomsten", "Live"],
                   ["/dag", "Dagen"],
                   ["/maatschappij", "Maatschappijen"],
+                  ["/vliegtuig", "Vliegtuigen"],
                   ["/statistieken", "Cijfers"],
                   ["/bijzonder", "Bijzonder"],
                   ["/spotdle", "Spotdle"],
@@ -81,6 +83,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               {SITE.legalName}
             </p>
             <ul className="flex gap-6">
+              <li>
+                <Link href="/woordenboek">Woordenboek</Link>
+              </li>
               <li>
                 <Link href="/privacy-en-auteursrecht">
                   Privacy en auteursrecht

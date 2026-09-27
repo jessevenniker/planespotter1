@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { RUNWAYS } from "@/lib/photos";
 import { allTypeSlugs, days, operators, publishedEntries, sortedEntries } from "@/lib/log";
 import { SITE } from "@/lib/seo";
+import { AIRCRAFT, COMPARISONS, comparisonSlug } from "@/lib/aircraft";
 
 export const dynamic = "force-static";
 
@@ -25,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/statistieken", 0.6),
     page("/bijzonder", 0.7),
     page("/spotdle", 0.7),
+    page("/aankomsten", 0.8),
+    page("/vliegtuig", 0.9),
+    page("/woordenboek", 0.6, "monthly"),
+    // Typepagina's en vergelijkingen: hier wordt veel op gezocht.
+    ...AIRCRAFT.map((a) => page(`/vliegtuig/${a.slug}`, 0.9)),
+    ...COMPARISONS.map(([a, b]) => page(`/vergelijk/${comparisonSlug(a, b)}`, 0.8, "monthly")),
     page("/mijn-spotlog", 0.4, "monthly"),
     page("/over", 0.4, "yearly"),
     {

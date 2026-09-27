@@ -23,6 +23,8 @@ import {
 } from "@/lib/photos";
 import { entries, getDay, getEntry, getOperator, neighbours } from "@/lib/log";
 import { entryJsonLd, breadcrumbJsonLd, entryMeta } from "@/lib/seo";
+import { aircraftForFamily, fmt, variantFor } from "@/lib/aircraft";
+import { familyOf } from "@/lib/spotdle";
 
 export const dynamicParams = false;
 
@@ -64,6 +66,8 @@ export default async function EntryPage({ params }: { params: Promise<{ reg: str
   const light = lightOf(e.sunAltitude);
   const reason = specialReason(e);
   const c = e.camera;
+  const info = aircraftForFamily(familyOf(e.type));
+  const variant = info ? variantFor(info, e.type) : null;
 
   const crumbs = breadcrumbJsonLd([
     { name: "Log", path: "/" },
@@ -239,6 +243,35 @@ export default async function EntryPage({ params }: { params: Promise<{ reg: str
           )}
         </div>
       </nav>
+
+      {info && variant && (
+        <section className="mx-auto max-w-[1240px] border-t border-rule px-5 py-8" aria-labelledby="over-type">
+          <div className="grid gap-6 md:grid-cols-[1fr_1.4fr]">
+            <div>
+              <h2 id="over-type" className="text-lg">Over de {info.name}</h2>
+              <p className="mt-2 max-w-[52ch] text-sm">{info.intro}</p>
+              <p className="mt-3 text-sm">
+                <Link href={`/vliegtuig/${info.slug}`}>Alles over de {info.name}</Link>
+              </p>
+            </div>
+            <dl className="grid grid-cols-2 gap-x-6 gap-y-3 self-start border-t border-rule pt-3 text-sm sm:grid-cols-3">
+              {[
+                ["Variant", variant.name],
+                ["Lengte", fmt.m(variant.length)],
+                ["Spanwijdte", fmt.m(variant.span)],
+                ["Max. startgewicht", fmt.t(variant.mtow)],
+                ["Bereik", fmt.km(variant.range)],
+                [variant.seats ? "Stoelen" : "Lading", variant.seats ?? `${variant.payload} t`],
+              ].map(([l, v]) => (
+                <div key={l}>
+                  <dt className="text-ink/60">{l}</dt>
+                  <dd className="data">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
 
       {sameDay.length > 0 && day && (
         <section className="mx-auto max-w-[1240px] border-t border-rule px-5 py-8">

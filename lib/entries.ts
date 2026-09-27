@@ -8,10 +8,10 @@ import type { Entry } from "./photos";
 export const entries: Entry[] = [
   {
     id: "klm-787-2026-09-22",
-    registration: null,
-    type: "Boeing 787",
-    typeShort: "787",
-    typeSlug: "boeing-787",
+    registration: "PH-BKA",
+    type: "Boeing 787-10",
+    typeShort: "787-10",
+    typeSlug: "boeing-787-10",
     operator: "KLM",
     category: "passagiers",
     runway: null,
@@ -40,7 +40,7 @@ export const entries: Entry[] = [
   },
   {
     id: "world2fly-a350-2026-09-22",
-    registration: null,
+    registration: "EC-NOI",
     type: "Airbus A350",
     typeShort: "A350",
     typeSlug: "airbus-a350",
@@ -72,7 +72,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-777-200er-2026-09-20",
-    registration: null,
+    registration: "PH-BQM",
     type: "Boeing 777-200ER",
     typeShort: "777-200ER",
     typeSlug: "boeing-777-200er",
@@ -168,7 +168,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-777-300er-2026-09-20",
-    registration: null,
+    registration: "PH-BVN",
     type: "Boeing 777-300ER",
     typeShort: "777-300ER",
     typeSlug: "boeing-777-300er",
@@ -264,7 +264,7 @@ export const entries: Entry[] = [
   },
   {
     id: "transavia-a321neo-2026-09-20",
-    registration: null,
+    registration: "PH-YHF",
     type: "Airbus A321neo",
     typeShort: "A321neo",
     typeSlug: "airbus-a321neo",
@@ -296,10 +296,10 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-a330-2026-09-20-2",
-    registration: null,
-    type: "Airbus A330",
-    typeShort: "A330",
-    typeSlug: "airbus-a330",
+    registration: "PH-AOC",
+    type: "Airbus A330-200",
+    typeShort: "A330-200",
+    typeSlug: "airbus-a330-200",
     operator: "KLM",
     category: "passagiers",
     runway: null,
@@ -328,7 +328,7 @@ export const entries: Entry[] = [
   },
   {
     id: "tui-737-max-2026-09-20",
-    registration: null,
+    registration: "PH-TFT",
     type: "Boeing 737 MAX",
     typeShort: "737 MAX",
     typeSlug: "boeing-737-max",
@@ -520,7 +520,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-cityhopper-e195-e2-2026-09-20",
-    registration: null,
+    registration: "PH-NXW",
     type: "Embraer E195-E2",
     typeShort: "E195-E2",
     typeSlug: "embraer-e195-e2",
@@ -1064,7 +1064,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-777-300er-2026-09-15",
-    registration: null,
+    registration: "PH-BVA",
     type: "Boeing 777-300ER",
     typeShort: "777-300ER",
     typeSlug: "boeing-777-300er",
@@ -1512,7 +1512,7 @@ export const entries: Entry[] = [
   },
   {
     id: "united-airlines-767-300er-2026-09-09",
-    registration: null,
+    registration: "N642UA",
     type: "Boeing 767-300ER",
     typeShort: "767-300ER",
     typeSlug: "boeing-767-300er",
@@ -1672,7 +1672,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-737-800-2026-08-23",
-    registration: null,
+    registration: "PH-BXI",
     type: "Boeing 737-800",
     typeShort: "737-800",
     typeSlug: "boeing-737-800",
@@ -2440,7 +2440,7 @@ export const entries: Entry[] = [
   },
   {
     id: "china-southern-airlines-a350-2026-08-13",
-    registration: null,
+    registration: "B-30F0",
     type: "Airbus A350",
     typeShort: "A350",
     typeSlug: "airbus-a350",
@@ -2536,7 +2536,7 @@ export const entries: Entry[] = [
   },
   {
     id: "air-canada-787-2026-07-22-2",
-    registration: null,
+    registration: "C-GHPY",
     type: "Boeing 787",
     typeShort: "787",
     typeSlug: "boeing-787",
@@ -2856,7 +2856,7 @@ export const entries: Entry[] = [
   },
   {
     id: "klm-cargo-747-400erf-2026-03-15",
-    registration: null,
+    registration: "PH-CKA",
     type: "Boeing 747-400ERF",
     typeShort: "747-400ERF",
     typeSlug: "boeing-747-400erf",
@@ -3208,7 +3208,7 @@ export const entries: Entry[] = [
   },
   {
     id: "icelandair-757-200-2025-08-21",
-    registration: null,
+    registration: "TF-FIV",
     type: "Boeing 757-200",
     typeShort: "757-200",
     typeSlug: "boeing-757-200",
@@ -3240,7 +3240,7 @@ export const entries: Entry[] = [
   },
   {
     id: "transavia-737-800-2025-08-21",
-    registration: null,
+    registration: "PH-HSI",
     type: "Boeing 737-800",
     typeShort: "737-800",
     typeSlug: "boeing-737-800",
@@ -3432,7 +3432,7 @@ export const entries: Entry[] = [
   },
   {
     id: "air-china-cargo-777f-2025-06-30",
-    registration: null,
+    registration: "B-2098",
     type: "Boeing 777F",
     typeShort: "777F",
     typeSlug: "boeing-777f",
@@ -3848,7 +3848,7 @@ export const entries: Entry[] = [
   },
   {
     id: "qatar-airways-cargo-777f-2025-02-01",
-    registration: null,
+    registration: "A7-BFD",
     type: "Boeing 777F",
     typeShort: "777F",
     typeSlug: "boeing-777f",
@@ -3937,7 +3937,7 @@ export const entries: Entry[] = [
   },
   {
     id: "china-southern-airlines-a350",
-    registration: null,
+    registration: "B-32CR",
     type: "Airbus A350",
     typeShort: "A350",
     typeSlug: "airbus-a350",

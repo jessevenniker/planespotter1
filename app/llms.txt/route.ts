@@ -4,6 +4,7 @@ import {
 } from "@/lib/photos";
 import { operators, sortedEntries, stats } from "@/lib/log";
 import { SITE } from "@/lib/seo";
+import { AIRCRAFT, fmt } from "@/lib/aircraft";
 
 export const dynamic = "force-static";
 
@@ -37,6 +38,13 @@ Per dag: ${SITE.url}/dag · Per maatschappij: ${SITE.url}/maatschappij · Statis
 ## Maatschappijen
 
 ${operators().map((o) => `- [${o.name}](${SITE.url}/maatschappij/${o.slug}): ${o.entries.length}`).join("\n")}
+
+## Vliegtuigtypes
+
+${AIRCRAFT.map((a) => { const v = a.variants[a.main]; return `- [${a.name}](${SITE.url}/vliegtuig/${a.slug}): ${a.maker}, eerste vlucht ${a.firstFlight}, ${a.engines} motoren; ${v.name} ${fmt.m(v.length)} lang, spanwijdte ${fmt.m(v.span)}, bereik ${fmt.km(v.range)}`; }).join("\n")}
+
+Spotterswoordenboek: ${SITE.url}/woordenboek
+Live aankomsten: ${SITE.url}/aankomsten
 
 ## Banen
 

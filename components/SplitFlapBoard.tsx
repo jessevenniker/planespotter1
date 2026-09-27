@@ -29,7 +29,7 @@ const prefersReducedMotion = () =>
  * tekenset tot het juiste teken, met een kleine vertraging per positie. In de
  * HTML staat meteen de eindtekst, dus crawlers en screenreaders lezen gewoon mee.
  */
-function Flaps({ text, width }: { text: string; width: number }) {
+export function Flaps({ text, width }: { text: string; width: number }) {
   const target = pad(text, width);
   const [shown, setShown] = useState(target);
   const [turns, setTurns] = useState<number[]>(() => Array(width).fill(0));
