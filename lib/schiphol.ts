@@ -7,6 +7,9 @@ import { familyOf } from "./spotdle";
 
 const BASE = "https://api.schiphol.nl/public/public-flights/v4";
 
+// De firewall van Schiphol weigert verzoeken zonder herkenbare User-Agent.
+const UA = "Dutchplanes/1.0 (+https://www.planespotternederland.nl)";
+
 export const isConfigured = () =>
   Boolean(
     process.env.SCHIPHOL_CLIENT_ID && process.env.SCHIPHOL_CLIENT_SECRET && process.env.SCHIPHOL_TOKEN_URL
@@ -26,7 +29,7 @@ async function bearer(): Promise<string> {
   if (process.env.SCHIPHOL_AUDIENCE) body.set("audience", process.env.SCHIPHOL_AUDIENCE);
   const res = await fetch(process.env.SCHIPHOL_TOKEN_URL!, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
+    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json", "User-Agent": UA },
     body,
     cache: "no-store",
   });
@@ -40,7 +43,7 @@ type Cache = { revalidate: number };
 
 async function api<T>(path: string, cache: Cache): Promise<{ data: T; link: string | null }> {
   const res = await fetch(`${BASE}${path}`, {
-    headers: { Authorization: `Bearer ${await bearer()}`, Accept: "application/json" },
+    headers: { Authorization: `Bearer ${await bearer()}`, Accept: "application/json", "User-Agent": UA },
     next: cache,
   });
   if (res.status === 204) return { data: {} as T, link: null };
@@ -163,7 +166,7 @@ const localStamp = (d: Date) =>
  * Aankomsten van een half uur geleden tot een paar uur vooruit. Alleen de
  * hoofdvlucht, dus geen dubbele regels voor codeshares.
  */
-export async function arrivals({ hoursAhead = 3, maxPages = 5 } = {}): Promise<Arrival[]> {
+export async function arrivals({ hoursAhead = 3, maxPages = 10 } = {}): Promise<Arrival[]> {
   const now = Date.now();
   const params = new URLSearchParams({
     flightDirection: "A",
@@ -172,6 +175,8 @@ export async function arrivals({ hoursAhead = 3, maxPages = 5 } = {}): Promise<A
     toDateTime: localStamp(new Date(now + hoursAhead * 3_600_000)),
     searchDateTimeField: "scheduleDateTime",
     sort: "+scheduleDateTime",
+    // Alleen vluchten die echt vliegen; anders staat dezelfde vlucht er soms dubbel in.
+    isOperationalFlight: "true",
   });
 
   const raw: RawFlight[] = [];
