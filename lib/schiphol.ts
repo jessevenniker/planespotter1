@@ -23,6 +23,7 @@ async function bearer(): Promise<string> {
     client_secret: process.env.SCHIPHOL_CLIENT_SECRET!,
   });
   if (process.env.SCHIPHOL_SCOPE) body.set("scope", process.env.SCHIPHOL_SCOPE);
+  if (process.env.SCHIPHOL_AUDIENCE) body.set("audience", process.env.SCHIPHOL_AUDIENCE);
   const res = await fetch(process.env.SCHIPHOL_TOKEN_URL!, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
